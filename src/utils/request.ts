@@ -1,11 +1,20 @@
+/*
+ * @Author: yu li
+ * @Date: 2022-06-11 15:51:57
+ * @LastEditTime: 2022-06-11 17:22:58
+ * @LastEditors: yu li
+ * @FilePath: /vue3-cli/src/utils/request.ts
+ * @Description: 文件描述
+ * @ReadMe: 产考资料，学习文献等...
+ */
 import axios from "axios";
 import { getToken } from "@/utils/auth";
 import { storeToRefs } from "pinia";
 
 import { useUserStore } from "@/store/user";
 const useStore = useUserStore();
-const { name, nameLength } = storeToRefs(useStore);
-const { getInfo } = useStore;
+const { hasToken } = storeToRefs(useStore);
+// const { getInfo } = useStore;
 
 // create an axios instance
 const service = axios.create({
@@ -18,7 +27,7 @@ const service = axios.create({
 service.interceptors.request.use(
   (config: any) => {
     // do something before request is sent
-    if (store.getters.token) {
+    if (hasToken) {
       // let each request carry token
       // ['Token'] is a custom headers key
       // please modify it according to the actual situation
