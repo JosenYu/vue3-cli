@@ -1,7 +1,7 @@
 /*
  * @Author: yu li
  * @Date: 2022-06-11 14:21:07
- * @LastEditTime: 2022-06-11 16:19:26
+ * @LastEditTime: 2022-06-11 16:29:26
  * @LastEditors: yu li
  * @FilePath: /vue3-cli/vite.config.ts
  * @Description: 文件描述
@@ -51,6 +51,7 @@ export default defineConfig({
   },
   // 生产环境去除 console debugger
   build: {
+    minify: "terser",
     terserOptions: {
       compress: {
         drop_console: true,
