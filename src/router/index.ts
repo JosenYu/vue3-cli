@@ -1,7 +1,7 @@
 /*
  * @Author: yu li
  * @Date: 2022-06-11 16:15:17
- * @LastEditTime: 2022-06-11 16:19:40
+ * @LastEditTime: 2022-06-12 01:42:36
  * @LastEditors: yu li
  * @FilePath: /vue3-cli/src/router/index.ts
  * @Description: 路由
@@ -12,8 +12,27 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 const routes: RouteRecordRaw[] = [
   {
     path: "/",
+    redirect: "/login",
+  },
+  // 将匹配所有内容并将其放在 `$route.params.pathMatch` 下
+  {
+    path: "/:pathMatch(.*)*",
+    redirect: "/notFound",
+  },
+  {
+    path: "/notFound",
+    name: "NotFound",
+    component: () => import("@/pages/NotFound.vue"),
+  },
+  {
+    path: "/login",
     name: "Login",
-    component: () => import("@/pages/login/Login.vue"),
+    component: () => import("@/pages/login/LoginPage.vue"),
+  },
+  {
+    path: "/home",
+    name: "Home",
+    component: () => import("@/pages/HomePage.vue"),
   },
 ];
 

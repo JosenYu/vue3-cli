@@ -1,7 +1,7 @@
 /*
  * @Author: yu li
  * @Date: 2022-06-11 12:44:07
- * @LastEditTime: 2022-06-11 16:39:31
+ * @LastEditTime: 2022-06-12 01:36:10
  * @LastEditors: yu li
  * @FilePath: /vue3-cli/src/main.ts
  * @Description: 文件描述
@@ -18,10 +18,14 @@ import { createPinia } from "pinia";
 import router from "./router/index";
 import antD from "ant-design-vue";
 import "ant-design-vue/dist/antd.css";
-
+import "./router/permission";
 import App from "./App.vue";
 
+import { setToken } from "./utils/auth";
+setToken("admin");
+
 const app = createApp(App);
-app.use(antD).use(router).use(createPinia()).mount("#app");
+const pinia = createPinia();
+app.use(antD).use(router).use(pinia).mount("#app");
 
 console.log("当前运行环境", import.meta.env);

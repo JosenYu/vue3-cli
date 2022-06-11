@@ -1,7 +1,7 @@
 /*
  * @Author: yu li
  * @Date: 2022-06-11 13:03:52
- * @LastEditTime: 2022-06-11 16:13:32
+ * @LastEditTime: 2022-06-11 21:13:07
  * @LastEditors: yu li
  * @FilePath: /vue3-cli/.eslintrc.js
  * @Description: 文件描述
@@ -35,7 +35,32 @@ module.exports = {
   // eslint-plugin-vue @typescript-eslint/eslint-plugin eslint-plugin-prettier的缩写
   plugins: ["vue", "@typescript-eslint", "prettier"],
   rules: {
-    "@typescript-eslint/no-explicit-any": ["off"], // 新增这句话，关闭any报错
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "vue/custom-event-name-casing": "off",
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+    "no-unused-vars": "error",
+    "space-before-function-paren": "off",
+    "vue/name-property-casing": ["error", "PascalCase"], // vue/component-definition-name-casing 对组件定义名称强制使⽤特定的⼤⼩
+    "vue/attributes-order": "off",
+    "vue/one-component-per-file": "off",
+    "vue/html-closing-bracket-newline": "off",
+    "vue/max-attributes-per-line": "off",
+    "vue/multiline-html-element-content-newline": "off",
+    "vue/singleline-html-element-content-newline": "off",
+    "vue/attribute-hyphenation": "off",
+    "vue/require-default-prop": "off",
+    "vue/script-setup-uses-vars": "off",
+    "vue/html-self-closing": "error",
   },
   globals: {
     defineProps: "readonly",

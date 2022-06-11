@@ -1,7 +1,7 @@
 /*
  * @Author: yu li
  * @Date: 2022-06-11 15:51:57
- * @LastEditTime: 2022-06-11 17:22:58
+ * @LastEditTime: 2022-06-12 02:05:11
  * @LastEditors: yu li
  * @FilePath: /vue3-cli/src/utils/request.ts
  * @Description: 文件描述
@@ -9,11 +9,11 @@
  */
 import axios from "axios";
 import { getToken } from "@/utils/auth";
-import { storeToRefs } from "pinia";
+// import { storeToRefs } from "pinia";
 
-import { useUserStore } from "@/store/user";
-const useStore = useUserStore();
-const { hasToken } = storeToRefs(useStore);
+// import { useUserStore } from "@/store/user";
+// const useStore = useUserStore();
+const hasToken = false;
 // const { getInfo } = useStore;
 
 // create an axios instance
