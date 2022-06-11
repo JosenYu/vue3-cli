@@ -1,7 +1,7 @@
 /*
  * @Author: yu li
  * @Date: 2022-06-11 13:03:52
- * @LastEditTime: 2022-06-11 15:28:05
+ * @LastEditTime: 2022-06-11 16:13:32
  * @LastEditors: yu li
  * @FilePath: /vue3-cli/.eslintrc.js
  * @Description: 文件描述
@@ -34,7 +34,9 @@ module.exports = {
   },
   // eslint-plugin-vue @typescript-eslint/eslint-plugin eslint-plugin-prettier的缩写
   plugins: ["vue", "@typescript-eslint", "prettier"],
-  rules: {},
+  rules: {
+    "@typescript-eslint/no-explicit-any": ["off"], // 新增这句话，关闭any报错
+  },
   globals: {
     defineProps: "readonly",
     defineEmits: "readonly",

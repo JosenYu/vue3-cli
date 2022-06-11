@@ -1,7 +1,7 @@
 /*
  * @Author: yu li
  * @Date: 2022-06-11 15:14:57
- * @LastEditTime: 2022-06-11 15:50:08
+ * @LastEditTime: 2022-06-11 16:19:49
  * @LastEditors: yu li
  * @FilePath: /vue3-cli/src/store/app.ts
  * @Description: 此应用的状态管理器
@@ -21,6 +21,7 @@ export const useMainStore = defineStore("app", () => {
   return {
     name,
     nameLength,
+
     getInfo,
   };
 });
