@@ -1,13 +1,13 @@
 /*
  * @Author: yu li
  * @Date: 2022-06-12 00:27:57
- * @LastEditTime: 2022-06-12 02:03:33
+ * @LastEditTime: 2022-06-17 00:07:01
  * @LastEditors: yu li
- * @FilePath: /vue3-cli/src/router/permission.ts
+ * @FilePath: /vue3-cli/src/permission.ts
  * @Description: 文件描述
  * @ReadMe: 产考资料，学习文献等...
  */
-import router from "./index";
+import router from "./router/index";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 
@@ -23,7 +23,8 @@ router.beforeEach(async (to, from, next) => {
   // init store
   const userStore = useUserStore();
   // set page title
-  document.title = "";
+  document.title = import.meta.env.VITE_APP_TITLE;
+
   const hasToken = !!getToken();
   // determine whether the user has logged in
   if (hasToken) {
